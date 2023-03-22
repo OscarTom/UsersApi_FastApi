@@ -15,7 +15,7 @@ app = FastAPI()
 
 ############ GET ###################
 # Llamamos a traves de la url al get y nos devuelve toda la lista de usuarios
-@app.get("/usersdb", response_model=list[User])
+@app.get("/usersdb")
 async def users():
   """users = db_client.users.find()
   users = users_schema(users)
