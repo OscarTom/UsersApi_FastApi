@@ -76,9 +76,9 @@ async def user(id: str):
   return {"ok":"Usuario eliminado correctamente."}
   if not found:
     return {"error":"No se ha eliminado el usuario."}
+  
       
 def search_user(field: str, key):
-  
   try:
     user = db_client.users.find_one({field:key}) #buscamos el usuario por email
     user = user_schema(user) #Aplicamos el esquema al usuario encontrado
