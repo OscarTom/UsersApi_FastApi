@@ -3,6 +3,6 @@ from pydantic import BaseModel
 
 #Declaramos la entidad user
 class User(BaseModel):
-  id:str | None   # con esto | indicamos que puede ser opcional
+  id:str   # con esto "| None" indicamos que puede ser opcional
   username:str
   email:str
