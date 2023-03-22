@@ -17,9 +17,10 @@ app = FastAPI()
 # Llamamos a traves de la url al get y nos devuelve toda la lista de usuarios
 @app.get("/usersdb", response_model=list[User])
 async def users():
-  users = db_client.users.find()
+  """users = db_client.users.find()
   users = users_schema(users)
-  return User(**users)
+  return users"""
+  return users_schema(db_client.users.find())
 
 # PATH --> Devolver un usuario con parametros http://localhost:8000/user/2
 @app.get("/userdb/{id}")
